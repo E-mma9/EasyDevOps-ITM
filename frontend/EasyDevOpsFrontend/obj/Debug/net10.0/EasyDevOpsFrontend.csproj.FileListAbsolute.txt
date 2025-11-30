@@ -1,0 +1,15 @@
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\bin\Debug\net10.0\EasyDevOpsFrontend.exe
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\bin\Debug\net10.0\EasyDevOpsFrontend.deps.json
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\bin\Debug\net10.0\EasyDevOpsFrontend.runtimeconfig.json
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\bin\Debug\net10.0\EasyDevOpsFrontend.dll
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\bin\Debug\net10.0\EasyDevOpsFrontend.pdb
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\obj\Debug\net10.0\EasyDevOpsFrontend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\obj\Debug\net10.0\EasyDevOpsFrontend.AssemblyInfoInputs.cache
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\obj\Debug\net10.0\EasyDevOpsFrontend.AssemblyInfo.cs
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\obj\Debug\net10.0\EasyDevOpsFrontend.csproj.CoreCompileInputs.cache
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\obj\Debug\net10.0\EasyDevOpsFrontend.sourcelink.json
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\obj\Debug\net10.0\EasyDevOpsFrontend.dll
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\obj\Debug\net10.0\refint\EasyDevOpsFrontend.dll
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\obj\Debug\net10.0\EasyDevOpsFrontend.pdb
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\obj\Debug\net10.0\EasyDevOpsFrontend.genruntimeconfig.cache
+C:\Users\Emmanuel\EasyDevOps-ITM\frontend\EasyDevOpsFrontend\obj\Debug\net10.0\ref\EasyDevOpsFrontend.dll
