@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo '========== BUILD =========='
-                bat 'dotnet build frontend/ -c Release'
+                bat 'dotnet build frontend/EasyDevOpsFrontend.csproj -c Release'
                 echo '✓ Build completed'
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo '========== UNIT TESTS =========='
-                bat 'dotnet test frontend/ --no-build --configuration Release'
+                bat 'dotnet test frontend/EasyDevOpsFrontend.csproj --no-build --configuration Release'
                 echo '✓ Tests completed'
             }
         }
@@ -48,7 +48,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo '========== DEPLOY =========='
-                bat 'dotnet publish frontend/ -c Release -o publish'
+                bat 'dotnet publish frontend/EasyDevOpsFrontend.csproj -c Release -o publish'
                 echo '✓ Deploy completed'
             }
         }
@@ -67,5 +67,6 @@ pipeline {
         }
     }
 }
+
 
 
