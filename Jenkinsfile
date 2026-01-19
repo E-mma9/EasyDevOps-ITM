@@ -11,7 +11,6 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo '========== CHECKOUT =========='
-                echo 'Checking out code from GitHub...'
                 checkout scm
                 echo '✓ Code pulled successfully'
             }
@@ -20,7 +19,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo '========== BUILD =========='
-                echo 'Building application...'
                 bat 'dotnet build SHIPPING.sln -c Release'
                 echo '✓ Build completed'
             }
@@ -29,7 +27,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo '========== UNIT TESTS =========='
-                echo 'Running tests...'
                 bat 'dotnet test SHIPPING.sln --no-build --configuration Release'
                 echo '✓ Tests completed'
             }
@@ -50,12 +47,9 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                echo '========== DEPLOY TO TEST ENVIRONMENT =========='
-                echo 'Deploying to test environment...'
+                echo '========== DEPLOY =========='
                 bat 'dotnet publish SHIPPING.sln -c Release -o publish'
                 echo '✓ Deploy completed'
-                // Add your deployment commands here
-                // Example: bat 'robocopy publish \\\\test-server\\deploy /MIR'
             }
         }
     }
@@ -69,7 +63,8 @@ pipeline {
             echo '✓ Pipeline succeeded!'
         }
         failure {
-            echo '✗ Pipeline failed! Check logs above.'
+            echo '✗ Pipeline failed!'
         }
     }
 }
+
