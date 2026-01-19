@@ -1,72 +1,62 @@
 pipeline {
     agent any
     
-    options {
-        timestamps()
-        timeout(time: 45, unit: 'MINUTES')
-        buildDiscarder(logRotator(numToKeepStr: '10'))
-    }
-    
     stages {
         stage('Checkout') {
             steps {
                 echo '========== CHECKOUT =========='
                 checkout scm
-                echo '✓ Code pulled successfully'
             }
         }
         
         stage('Build') {
             steps {
                 echo '========== BUILD =========='
-                bat 'dotnet build frontend/EasyDevOpsFrontend.csproj -c Release'
-                echo '✓ Build completed'
+                dir('frontend') {
+                    bat 'dotnet build EasyDevOpsFrontend.csproj --configuration Release'
+                }
             }
         }
         
         stage('Test') {
             steps {
                 echo '========== UNIT TESTS =========='
-                bat 'dotnet test frontend/EasyDevOpsFrontend.csproj --no-build --configuration Release'
-                echo '✓ Tests completed'
+                dir('frontend') {
+                    bat 'dotnet test'
+                }
             }
         }
         
         stage('Security') {
             steps {
-                echo '========== SECURITY SCAN (SNYK) =========='
+                echo '========== SECURITY (SNYK) =========='
                 snykSecurity(
                     snykInstallation: 'Snyk Scanner',
                     snykTokenId: 'snyk-token',
-                    additionalArguments: '--all-projects --severity-threshold=high',
+                    additionalArguments: '--all-projects',
+                    monitorOnlyTrustedModules: true,
                     failOnIssues: true
                 )
-                echo '✓ Security scan completed'
             }
         }
         
         stage('Deploy') {
             steps {
                 echo '========== DEPLOY =========='
-                bat 'dotnet publish frontend/EasyDevOpsFrontend.csproj -c Release -o publish'
-                echo '✓ Deploy completed'
+                dir('frontend') {
+                    bat 'dotnet publish EasyDevOpsFrontend.csproj --configuration Release'
+                }
             }
         }
     }
     
     post {
         always {
-            echo '========== PIPELINE FINISHED =========='
-            cleanWs()
-        }
-        success {
-            echo '✓ Pipeline succeeded!'
-        }
-        failure {
-            echo '✗ Pipeline failed!'
+            echo '========== FINISHED =========='
         }
     }
 }
+
 
 
 
